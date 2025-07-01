@@ -1,0 +1,17 @@
+{
+  "name": "pythagore",
+  "version": "1.0.0",
+  "description": "This library allows you to calculate the Pythagorean theorem",
+  "main": "Pythagore.js",
+  "keywords": [
+    "pythagore",
+    "pythagora",
+    "librarie",
+    "library",
+    "module",
+    "package",
+    "math"
+  ],
+  "author": "Tina-1300",
+  "license": "MIT"
+}
