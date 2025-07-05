@@ -12,39 +12,122 @@ npm i pythagore
 ```javascript
 const Pythagore = require('pythagore'); 
 
+let pythagore; 
+let hypotenuse;
+let side_a;
+let side_b;
+let is_rectangle;
 
-const calculPythagore = new Pythagore();
-
+pythagore = new Pythagore();
 
 console.log("--- Author Information ---");
-calculPythagore.Author(); 
+pythagore.Author(); 
 
 
 console.log("\n--- Right triangle verification ---");
-let cote1 = 3;
-let cote2 = 4;
-let hypotenusePotentielle = 5; 
+side_a = 3;
+side_b = 4;
+hypotenuse = 5; 
 
-let estRectangle = calculPythagore.IsRectangle(hypotenusePotentielle, cote1, cote2);
-console.log(`The triangle with sides ${hypotenusePotentielle}, ${cote1}, ${cote2} is it rectangle ? ${estRectangle}`); 
+is_rectangle = pythagore.IsRectangle(hypotenuse, side_a, side_b);
+console.log(`The triangle with sides ${hypotenuse}, ${side_a}, ${side_b} is it rectangle ? ${is_rectangle}`); 
 
-let coteA = 2;
-let coteB = 3;
-let coteC = 4;
-let estRectangle2 = calculPythagore.IsRectangle(coteC, coteA, coteB); 
-console.log(`The triangle with sides ${coteC}, ${coteA}, ${coteB} is it rectangle ? ${estRectangle2}`); 
+
+side_a = 2;
+side_b = 3;
+hypotenuse = 4;
+is_rectangle = pythagore.IsRectangle(hypotenuse, side_a, side_b); 
+console.log(`The triangle with sides ${hypotenuse}, ${side_a}, ${side_b} is it rectangle ? ${is_rectangle}`); 
 
 
 console.log("\n--- Calculation of an adjacent side ---");
-let hypotenuseConnue = 10;
-let autreCoteConnu = 6;
-let coteManquant = calculPythagore.AdjacentSide(hypotenuseConnue, autreCoteConnu);
-console.log(`If the hypotenuse is ${hypotenuseConnue} and one side is ${autreCoteConnu}, the missing side is : ${coteManquant}`); 
+
+hypotenuse = 10;
+side_b = 6;
+side_a = pythagore.AdjacentSide(hypotenuse, side_b);
+console.log(`If the hypotenuse is ${hypotenuse} and one side is ${side_b}, the missing side is : ${side_a}`); 
 
 
 console.log("\n--- Calculation of the hypotenuse ---");
-let cateteA = 7;
-let cateteB = 24;
-let hypotenuseCalculee = calculPythagore.Hypotenus(cateteA, cateteB);
-console.log(`If the sides are ${cateteA} and ${cateteB}, the hypotenuse is : ${hypotenuseCalculee}`); 
+
+side_a = 7;
+side_b = 24;
+hypotenuse = pythagore.Hypotenus(side_a, side_b);
+console.log(`If the sides are ${side_a} and ${side_b}, the hypotenuse is : ${hypotenuse}`); 
+
+console.log("\n\n");
+
+// ------------------------------------------------
+
+side_a = 7;
+side_b = 8;
+hypotenuse = null;
+pythagore = new Pythagore(side_a, side_b);
+
+
+try {
+    hypotenuse = pythagore.Hypotenus();
+    is_rectangle = pythagore.IsRectangle(hypotenuse); 
+    console.log(`The triangle is it rectangle ? ${is_rectangle}`);
+
+    if(pythagore.AdjacentSide(hypotenuse, side_a) === side_b){
+        console.log('sucess');
+    }
+
+
+}catch (err){
+    console.error("Error checking right triangle :", err.message);
+}
+
+console.log("\n\n");
+
+// -------------------------------------------
+
+side_a = null; // 3
+side_b = 4; // 4
+hypotenuse = 5; // 5
+
+pythagore = new Pythagore(side_a, side_b, hypotenuse);
+
+
+try {
+    side_a = pythagore.AdjacentSide()
+    hypotenuse = pythagore.Hypotenus(side_a, side_b);
+    is_rectangle = pythagore.IsRectangle(hypotenuse, side_a, side_b); 
+    console.log(`The triangle is it rectangle ? ${is_rectangle}`);
+
+    if(pythagore.AdjacentSide(hypotenuse, side_a) === side_b){
+        console.log('sucess');
+    }
+
+    
+}catch (err){
+    console.error("Error checking right triangle :", err.message);
+}
+console.log("\n\n");
+// -------------------------------------------
+
+
+
+side_a = 3; // 3
+side_b = 4; // 4
+hypotenuse = 5; // 5
+
+pythagore = new Pythagore(side_a, side_b, hypotenuse);
+
+
+try {
+
+    hypotenuse = pythagore.Hypotenus();
+    is_rectangle = pythagore.IsRectangle(); 
+    console.log(`The triangle is it rectangle ? ${is_rectangle}`);
+
+    if(pythagore.AdjacentSide(hypotenuse, side_a) === side_b){
+        console.log('sucess');
+    }
+
+    
+}catch (err){
+    console.error("Error checking right triangle :", err.message);
+}
 ```
