@@ -11,7 +11,8 @@ npm i pythagore
 
 ```javascript
 //const Pythagore = require('pythagore'); // non-minify version
-const Pythagore = require('Pythagore.min.js'); // minifier version
+//const Pythagore = require('./node_modules/pythagore/Pythagore.min.js'); // minifier version
+const Pythagore = require('pythagore/Pythagore.min.js'); // minifier version
 
 let pythagore; 
 let hypotenuse;
