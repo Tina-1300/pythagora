@@ -10,7 +10,8 @@ npm i pythagore
 # Use :
 
 ```javascript
-const Pythagore = require('pythagore'); 
+//const Pythagore = require('pythagore'); // non-minify version
+const Pythagore = require('Pythagore.min.js'); // minifier version
 
 let pythagore; 
 let hypotenuse;
@@ -131,3 +132,4 @@ try {
     console.error("Error checking right triangle :", err.message);
 }
 ```
+
