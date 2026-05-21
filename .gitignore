@@ -1,0 +1,11 @@
+# Fichiers système / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Dépendances
+node_modules/
+package-lock.json
+
+dist/
+

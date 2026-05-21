@@ -1,9 +1,14 @@
 {
-    "name": "pythagore",
-    "version": "2.2.0",
-    "description": "This library allows you to calculate the Pythagorean theorem",
-    "main": "Pythagore.js",
-    "keywords": [
+  "name": "pythagore",
+  "version": "2.3.0",
+  "description": "This library allows you to calculate the Pythagorean theorem",
+  "main": "./dist/Pythagore.min.js",
+  "scripts": {
+    "test": "jest",
+    "build": "terser src/Pythagore.js -o dist/Pythagore.min.js -c -m",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "keywords": [
         "pythagore",
         "pythagora",
         "librarie",
@@ -11,7 +16,14 @@
         "module",
         "package",
         "math"
-    ],
-    "author": "Tina-1300",
-    "license": "MIT"
+  ],
+  "author": "Tina-1300",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "terser": "^5.47.1"
+  },
+  "files": [
+    "dist/"
+  ]
 }
